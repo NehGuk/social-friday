@@ -1,0 +1,1 @@
+First things first. I'm trying out the "monorepo" structure, that is, a single repository containing both the backend and frontend code, in separate directories. I'll start a React project here in this directory as soon as I'm up and running with the backend code.
