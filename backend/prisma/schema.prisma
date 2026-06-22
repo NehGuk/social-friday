@@ -26,13 +26,14 @@ model game_players {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model games {
-  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name         String         @db.VarChar(255)
-  source_url   String         @db.VarChar(255)
-  min_players  Int?
-  max_players  Int?
-  game_players game_players[]
-  tournaments  tournaments[]
+  id             String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String         @db.VarChar(255)
+  source_url     String         @db.VarChar(255)
+  min_players    Int?
+  max_players    Int?
+  game_image_url String?        @db.VarChar(255)
+  game_players   game_players[]
+  tournaments    tournaments[]
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
@@ -92,6 +93,7 @@ model tournaments {
   description             String
   start_date              DateTime?                 @db.Date
   end_date                DateTime?                 @db.Date
+  tournament_image_url    String?                   @db.VarChar(255)
   tournament_comments     tournament_comments[]
   tournament_participants tournament_participants[]
   tournament_results      tournament_results[]

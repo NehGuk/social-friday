@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.get("/", async (req, res) => {
-  const users = await prisma.games.findMany()
+  const users = await prisma.players.findMany()
   res.json(users)
 })
 
